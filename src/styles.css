@@ -1,0 +1,10 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.jumbotron {background-image: url("./assets/images/AdobeStock_125950658.jpeg");
+background-size: 100%;
+border-radius: 0px;
+color: white;
+text-shadow: 2px 2px 5px black;}
+
+
+.row {margin-bottom: 50px}

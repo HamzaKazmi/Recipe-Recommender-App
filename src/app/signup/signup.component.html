@@ -1,0 +1,26 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="jumbotron text-center">
+  <h1>My recommender System</h1>
+  <p>Create User page</p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h4>Create User:</h4>
+    <div class="col-sm-12">
+      <form>
+        <div class="form-group">
+          <label for="email">Email address:</label>
+          <input type="email" #email class="form-control" placeholder="email" id="email">
+        </div>
+        <div class="form-group">
+          <label for="pwd">Password:</label>
+          <input type="password" #password class="form-control" placeholder="password" id="pwd">
+        </div>
+        <button routerLink="/" type="submit" (click)="signup(email.value, password.value)" class="btn btn-primary">Submit</button>
+      </form>
+
+    </div>
+  </div>
+</div>

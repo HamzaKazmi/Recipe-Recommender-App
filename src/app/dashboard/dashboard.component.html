@@ -1,0 +1,63 @@
+<app-nav-bar></app-nav-bar>
+
+<div class="jumbotron text-center">
+  <h1>Dashboard</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+    <h3>Recommended Recipes</h3>
+  </div>
+  <div class="row">
+    <div *ngIf="!fetchedRecipe">
+      <div class="loadme">
+        <p>Loading..</p>
+        <div class="loader"></div>
+      </div>
+    </div>
+    <div class="col-sm-4" *ngFor="let person of fetchedRecipe; let i = index">
+      <div class="card">
+        <img class="card-img-top" src="../../assets/images/AdobeStock_204600347.jpeg" alt="Card image" height="250px;">
+        <div class="card-body">
+          <h4 class="card-title">{{person[0]}}</h4>
+          <p class="card-text">Lorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem IpsumLorem Ipsum</p>
+          <a href="#{{i}}" data-toggle="modal" class="btn btn-primary">Rate Recipe</a>
+        </div>
+      </div>
+      <!-- The Modal -->
+      <div class="modal" id="{{i}}">
+        <div class="modal-dialog">
+          <div class="modal-content">
+
+            <!-- Modal Header -->
+            <div class="modal-header">
+              <h4 class="modal-title">{{person[0]}}</h4>
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+
+            <!-- Modal body -->
+            <div class="modal-body">
+              <div class="acidjs-rating-stars">
+              <input [(ngModel)]="ratedValue" type="radio" name="group-1" id="group-1-1" value="4"><label for="group-1-1"></label>
+              <input [(ngModel)]="ratedValue" type="radio" name="group-1" id="group-1-2" value="3"><label for="group-1-2"></label>
+              <input [(ngModel)]="ratedValue" type="radio" name="group-1" id="group-1-3" value="2"><label for="group-1-3"></label>
+              <input [(ngModel)]="ratedValue" type="radio" name="group-1" id="group-1-4" value="1"><label for="group-1-4"></label>
+              </div>
+              <button type="button" (click)="this.rateItem(this.person[0])" class="btn btn-primary" data-dismiss="modal">Rate</button>
+            </div>
+
+            <!-- Modal footer -->
+            <div class="modal-footer">
+
+              <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
